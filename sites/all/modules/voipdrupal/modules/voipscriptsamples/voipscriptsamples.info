@@ -1,0 +1,6 @@
+core = "6.x"
+dependencies[] = "voipcall"
+description = "Provides sample scripts that demonstrate the capabilities of the VoIP Drupal platform."
+name = "VoIP Script Samples"
+package = "VoIP Drupal"
+project = "voipscriptsamples"

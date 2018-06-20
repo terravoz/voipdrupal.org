@@ -1,0 +1,7 @@
+; $Id: 
+name = Soundcloud Upload
+description = "Add option to upload files to Soundcloud"
+core = 6.x
+package = SoundCloud Tools
+dependencies[] = soundcloud_api
+

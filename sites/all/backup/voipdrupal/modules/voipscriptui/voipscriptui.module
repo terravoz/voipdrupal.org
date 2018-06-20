@@ -1,0 +1,63 @@
+<?php
+/**
+ * @file Provides an easier way for developers to test Voip Drupal scripts
+ */ 
+
+foreach (array('voipscriptui.features.inc') as $file) {
+  require_once($file);
+}
+
+/**
+ * Implementation of hook_voipscript_get_script_names()
+ */
+function voipscriptui_voipscript_get_script_names() {
+  $script_names = array();
+  $result = db_query('SELECT n.title FROM {node} n WHERE n.type = "voipscriptui" and n.status = 1');
+  while ($node = db_fetch_object($result)) {
+    $script_names[]=$node->title;
+  }
+  return $script_names;
+}
+
+
+/**
+ * Implementation of hook_voipscript_load_script()
+ */
+function voipscriptui_voipscript_load_script($script_name, $options=NULL) {
+  $script = NULL;
+  $param = array('type' => 'voipscriptui', 'title' => $script_name, 'status' => 1);
+  $script_node = node_load($param);
+  if($script_node) {
+    $script = new VoipScript($script_name);
+    $script_code = $script_node->field_voipscriptui_code[0]['value'];
+    ob_start();
+    if(eval("$script_code")===false) {
+      ob_end_clean();
+      $script = NULL;
+      watchdog('voipscriptui', 'PHP syntax error in script: @script', array('@script' => $script_code), WATCHDOG_ERROR);
+      return;
+    }
+    ob_end_clean();
+  }
+  return $script;
+}
+
+/**
+ * Implementation of hook_validate()
+ */
+function voipscriptui_validate($node, &$form) {
+// TODO: why this function is not called?
+  $script_code = $node->field_voipscriptui_code[0]['value'];
+dsm($script_code, '$script_code');
+  ob_start();
+  if(eval("$script_code")===false) {
+    ob_end_clean();
+    form_set_error('field_voipscriptui_code',
+        t('PHP syntax error in script: @script',
+          array('@script' => $script_code)));
+  }
+  ob_end_clean();
+}
+
+
+

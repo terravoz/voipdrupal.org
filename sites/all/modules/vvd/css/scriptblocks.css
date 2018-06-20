@@ -1,0 +1,172 @@
+.sbPage, .sbDrawer, .sbBlock, .sbLabel, .sbSocket, .sbAfterSocket, .sbPageHolder, .sbDrawerHolder, .sbTrashBin {
+	/* Disable default HTML text selection */
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	margin: 0px;
+	padding: 0px;
+	
+	/*font-family: Arial;
+	font-size: 15px;*/
+}
+
+.sbUnselectable {
+	/* Disable default HTML text selection */
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.sbPageHolder {
+	position: relative;
+	border: 1px solid #333;
+	background-color: #999;
+	top: -5px;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	overflow: auto;
+    width: auto;
+}
+
+.sbDrawerHolder {
+	position: relative;
+	display: inline-block;
+	width: 220px;
+	/*height: 100%;*/
+	border: 1px solid #333;
+	background-color: #999;
+	float: left;
+    position: absolute;
+    z-index: 999;
+}
+
+
+.sbDrawerLabel {
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	height: 28px;
+	
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.sbPage {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: #FFF;
+}
+
+			
+.sbDrawer {
+	position: relative;
+	width: 100%;
+	height:510px;
+	padding: 5px 0px 10px 5px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 2px inset #CCC;
+	background-color: #999;
+}
+
+.sbTrashBin {
+	width: 80px;
+	height: 80px;
+	position:absolute;
+	right: 19px;
+	bottom: 18px;
+	border: 2px solid #C33;
+	text-align: center;
+	background-color: #DCC;
+}
+
+.sbTrashBinOpen {
+	background-color: #B88;
+}
+
+.sbSelection {
+	position: absolute;
+	border: 2px dashed #9C6;
+}
+
+
+.goog-tab {
+  background: #ddd;
+  border: 1px solid #333;
+  color: #333;
+  cursor: default;
+  padding: 4px 8px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* State: Hover */
+.goog-tab-hover {
+  background: #eee;
+}
+
+/* State: Disabled */
+.goog-tab-disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #fff;
+}
+/* State: Selected */
+.goog-tab-selected {
+  background: #fff !important; /* Selected trumps hover. */
+}
+
+.goog-tab-bar-top {
+	/*left: 10px;*/
+	height: 30px;
+	display: inline-block;
+	background-color: transparent;
+	border-bottom: none !important;
+     margin-left: 220px;
+    position: relative;
+}
+
+.goog-tab-bar-top .goog-tab {
+	top: 2px;
+}
+
+.goog-tab-bar-top .goog-tab-selected {
+	top: 0px;
+}
+
+.sbInternalInput{
+  width:100px;
+}
+
+#sbWorkspace{
+width:auto; height:540px; position:relative; top: 20px; margin-left: 20px; margin-bottom: 20px;
+}
+
+#sbWorkspace-wrapper{
+padding-bottom: 70px;
+}
+
+#sbWorkspace-resize{    
+padding-top: 46px;
+margin-left: 20px;
+position: absolute;
+background-repeat:repeat-x;
+background-image: url(angle-nxs-bkg.gif);
+background-position: center;
+width: 97.5%;
+font-size: 1px;
+cursor: ns-resize;
+cursor: n-resize;
+text-align:center;
+}

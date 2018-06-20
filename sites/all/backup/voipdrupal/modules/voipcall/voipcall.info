@@ -1,0 +1,10 @@
+core = "6.x"
+name = "VoIP Call"
+package = "VoIP Drupal"
+
+; Information added by drupal.org packaging script on 2011-05-26
+version = "6.x-1.0-beta4"
+core = "6.x"
+project = "voipdrupal"
+datestamp = "1306417317"
+

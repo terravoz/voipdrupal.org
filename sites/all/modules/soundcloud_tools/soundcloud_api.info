@@ -1,0 +1,7 @@
+; $Id: 
+name = Soundcloud API
+description = "Soundcloud API"
+core = 6.x
+package = SoundCloud Tools
+
+

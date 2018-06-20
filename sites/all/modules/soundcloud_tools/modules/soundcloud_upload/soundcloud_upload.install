@@ -1,0 +1,52 @@
+<?php
+/**
+ * @file
+ */
+ 
+/**
+ * Implementation of hook_install().
+ */
+function soundcloud_upload_install() {
+  drupal_install_schema('soundcloud_upload');
+}
+
+function soundcloud_upload_uninstall() {
+  drupal_uninstall_schema('soundcloud_upload');
+  //Delete module variables
+  db_query("DELETE FROM {variable} WHERE name LIKE '%soundcloud_upload%'");
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function soundcloud_upload_schema() {
+  $schema['soundcloud_files'] = array(
+    'description' => t('Store track id of Soundcloud files'),
+    'fields' => array(
+      'fid' => array(
+        'description' => t('original file id'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'track_id' => array(
+        'description' => t('Track ID'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'status' => array(
+        'description' => t('status of the uploading'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('fid'),
+  );
+
+  return $schema;
+}

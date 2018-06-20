@@ -1,0 +1,11 @@
+core = "6.x"
+dependencies[] = "features"
+dependencies[] = "views"
+dependencies[] = "vvd"
+description = "Provides UI for creating VoIP scripts"
+features[content][] = "vvd-field_vvd_editor"
+features[node][] = "vvd"
+features[views][] = "vvd_scripts"
+features[views_api][] = "api:2"
+name = "Visual VoIP Drupal"
+package = VoIP Drupal

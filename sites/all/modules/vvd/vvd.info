@@ -1,0 +1,8 @@
+; $Id$
+name = Visual VoIP Drupal core
+description = Visual VoIP Drupal core
+dependencies[] = content
+dependencies[] = voip
+dependencies[] = voipcall
+package = VoIP Drupal
+core = 6.x

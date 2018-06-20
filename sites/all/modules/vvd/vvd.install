@@ -1,0 +1,32 @@
+<?php
+/**@file
+ * Implementation of hook_install().
+ */
+function vvd_install() {
+  drupal_load('module', 'content');
+  content_notify('install', 'vvd');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function vvd_uninstall() {
+  drupal_load('module', 'content');
+  content_notify('uninstall', 'vvd');
+}
+
+/**
+ * Implementation of hook_enable().
+ */
+function vvd_enable() {
+  drupal_load('module', 'content');
+  content_notify('enable', 'vvd');
+}
+
+/**
+ * Implementation of hook_disable().
+ */
+function vvd_disable() {
+  drupal_load('module', 'content');
+  content_notify('disable', 'vvd');
+}

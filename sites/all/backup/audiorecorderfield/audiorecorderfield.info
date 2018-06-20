@@ -1,0 +1,7 @@
+name = Audio Recorder Field
+description = Adds a CCK field for recording and playing .wav audio files directly from the browser.
+core = 6.x
+dependencies[] = audiofield
+package = CCK
+
+

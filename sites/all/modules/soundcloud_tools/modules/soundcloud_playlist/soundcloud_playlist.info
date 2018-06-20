@@ -1,0 +1,8 @@
+; $Id: 
+name = Soundcloud Playlist
+description = "Adds Soundcloud playlist as block"
+core = 6.x
+dependencies[] = soundcloud_upload
+package = SoundCloud Tools
+
+

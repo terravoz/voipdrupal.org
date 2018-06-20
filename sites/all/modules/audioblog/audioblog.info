@@ -1,0 +1,16 @@
+core = "6.x"
+dependencies[] = "audiorecorderfield"
+dependencies[] = "features"
+dependencies[] = "voipcall"
+description = "create and handle Audioblog entries directly from telephones."
+features[content][] = "audioblog-field_audioblog_recording"
+features[node][] = "Audioblog"
+name = "Audio Blog"
+package = "VoIP Drupal"
+
+; Information added by drupal.org packaging script on 2012-03-06
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "audioblog"
+datestamp = "1330992209"
+

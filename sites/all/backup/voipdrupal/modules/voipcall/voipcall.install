@@ -1,0 +1,133 @@
+<?php
+/**
+ * Implementation of hook_install().
+ */
+function voipcall_install() {
+   drupal_install_schema('voipcall');
+}
+
+function voipcall_uninstall() {
+  drupal_uninstall_schema('voipcall');
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function voipcall_schema() {
+ 
+  /**
+   * voipcall_recording table
+   * 
+   */
+  $schema['voipcall'] = array(
+    'fields' => array(
+       'cid' => array(
+        'description' => t('CID'),
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'default' => 0,
+        'not null' => TRUE,
+      ),
+      'call_id' => array(
+        'type' => 'text',  
+        'size' => 'small',     
+        'default' => ''
+      ),
+      'caller_name' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'caller_number' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'dest_name' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'dest_number' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'duration' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'end_time' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'error_message' => array(
+        'type' => 'text', 
+        'size' => 'small',
+        'default' => ''
+      ),
+      'hangup_script' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'process_response' => array(
+        'type' => 'int', 
+        'default' => 0,
+      ),
+      'script' => array(
+        'type' => 'text', 
+        'size' => 'normal',
+        'default' => ''
+      ),
+      'source' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'start_time' => array(
+        'type' => 'int', 
+        'default' => 0,
+      ),
+      'status' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'answered_by' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'direction' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'hangup_reason' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'check_machine' => array(
+        'type' => 'int', 
+        'default' => 0,
+      ),
+      'text_script' => array(
+        'type' => 'text', 
+        'size' => 'normal',
+        'default' => ''
+      ),
+      'text_status' => array(
+        'type' => 'varchar', 
+        'length' => 255, 
+      ),
+      'created' => array(
+        'type' => 'int', 
+        'default' => 0,
+      ),
+      'changed' => array(
+        'type' => 'int', 
+        'default' => 0,
+      ),
+    ), 
+    'primary key' => array('cid'),
+  );
+
+  return $schema;
+}
